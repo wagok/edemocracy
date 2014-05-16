@@ -17,7 +17,7 @@ CREATE TABLE `ClassificatedInitiatives` (
   `Deleted` tinyint(1) NOT NULL,
   `addDate` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 INSERT INTO ClassificatedInitiatives VALUES (1, 1, 7, NULL, b'0', NULL);
 INSERT INTO ClassificatedInitiatives VALUES (9, 14, 1, NULL, b'0', '2009-05-07 20:39:43');
@@ -43,7 +43,7 @@ CREATE TABLE `Decisions` (
   `Deleted` tinyint(1) default NULL,
   `Author` int(11) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS Delegations;
@@ -58,7 +58,7 @@ CREATE TABLE `Delegations` (
   `Deleted` tinyint(1) default NULL,
   `Author` int(11) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 INSERT INTO Delegations VALUES (1, 2, 3, 1, 1, b'0', NULL, b'0', 2);
 INSERT INTO Delegations VALUES (5, 4, 2, 2, 1, b'0', '2009-05-03 21:56:47', b'0', 4);
@@ -85,7 +85,7 @@ CREATE TABLE `Events` (
   `eventDate` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `Author` (`Author`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 INSERT INTO Events VALUES (1, '������� �������', NULL, 1, NULL, '����� �������', '2009-04-09 00:00:00');
 
@@ -106,7 +106,7 @@ CREATE TABLE `Initiatives` (
   `Information` text,
   `Deleted` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 INSERT INTO Initiatives VALUES (3, 4, '����� ����������1!', 14, '��������2009-04-11T04:40:20+03:00', 0, 0, '0000-00-00 00:00:00', '2009-01-01 01:00:00', b'0', b'0', b'1', '', b'0');
 INSERT INTO Initiatives VALUES (4, 4, '���� 4', 1, '��������', 0, 2, '2009-04-11 00:00:00', '2009-05-06 00:32:37', b'1', b'0', b'0', '', b'0');
@@ -144,7 +144,7 @@ CREATE TABLE `Locations` (
   `Path` char(255) default NULL,
   PRIMARY KEY  (`id`),
   KEY `left_key` (`left_key`,`right_key`,`level`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 INSERT INTO Locations VALUES (1, 'Global', NULL, 'Global - root of locations tree', 1, 30, 0, 1, NULL, b'0', NULL);
 INSERT INTO Locations VALUES (3, '���� (Crimea)', 1, '������ ���������� ���������� ���� ������� ����� (All Crimean membrs)', 2, 29, 1, 1, '2009-04-23 00:32:46', b'0', '/1');
@@ -179,7 +179,7 @@ CREATE TABLE `Members` (
   `Author` int(11) default NULL,
   `Language` char(20) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 INSERT INTO Members VALUES (1, 'E-congress', 'system', 'System', '12345678909876543212qwsderfgtyhfdsswer', 14, '0000-00-00 00:00:00', 1, '0000-00-00 00:00:00', '', b'0', b'0', 0, NULL);
 INSERT INTO Members VALUES (3, 'Ivan', 'Ivanov', 'ivan', '123', 14, NULL, 1, NULL, NULL, b'0', b'0', 2, 'english');
@@ -194,7 +194,7 @@ CREATE TABLE `Posts` (
   `authorRating` int(11) default NULL,
   `postText` text,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS Relations;
@@ -205,7 +205,7 @@ CREATE TABLE `Relations` (
   `tableTo` char(255) default NULL,
   PRIMARY KEY  (`id`),
   KEY `TableFrom` (`tableFrom`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS SysLog;
@@ -216,7 +216,7 @@ CREATE TABLE `SysLog` (
   `addDate` datetime default NULL,
   `Error` char(255) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 INSERT INTO SysLog VALUES (1, 2, b'0', '2009-05-03 12:55:45', 'Econgress class: Member #2 is not in Initiative Location #');
 INSERT INTO SysLog VALUES (2, 2, b'0', '2009-05-03 12:57:14', 'Econgress class: Member #2 is not in Initiative Location #1');
@@ -254,7 +254,7 @@ CREATE TABLE `SysMessages` (
   PRIMARY KEY  (`id`),
   KEY `Type` (`Type`,`addDate`),
   KEY `messTo` (`messTo`)
-) ENGINE=MyISAM AUTO_INCREMENT=325 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=325 DEFAULT CHARSET=utf8;
 
 INSERT INTO SysMessages VALUES (57, 3, '������������� ���������� �� ������������� #2', 0, 1, '2009-04-26 00:00:00', b'0');
 INSERT INTO SysMessages VALUES (58, 2, '������������� ���������� �� ������������� #1', 0, 1, '2009-04-26 00:00:00', b'0');
@@ -538,7 +538,7 @@ CREATE TABLE `Topics` (
   `TopicText` text,
   `addDate` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS Voting;
@@ -555,7 +555,7 @@ CREATE TABLE `Voting` (
   `startDate` datetime default NULL,
   `voidVoting` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 INSERT INTO Voting VALUES (1, 4, '2009-05-06 05:00:00', '2009-05-07 22:48:35', -2, b'0', 1, 0, 2, '2009-05-06 05:00:00', b'0');
 INSERT INTO Voting VALUES (2, 5, '2009-05-04 00:00:00', '2009-05-07 22:48:46', 5, b'0', 1, 5, 0, '2009-05-08 00:00:00', b'0');
@@ -579,7 +579,7 @@ CREATE TABLE `classifications` (
   PRIMARY KEY  (`id`),
   KEY `left_key` (`left_key`,`right_key`,`level`),
   FULLTEXT KEY `Path` (`Path`)
-) ENGINE=MyISAM AUTO_INCREMENT=2038 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=2038 DEFAULT CHARSET=utf8;
 
 INSERT INTO classifications VALUES (1, 1, 14, NULL, NULL, '��������� (�� �������� �� �������������)', NULL, NULL, 0, NULL, NULL, NULL, NULL, b'0');
 INSERT INTO classifications VALUES (2, 2, 13, 2, 1, '������� �������������', '������ ������������� ����� �������� �� 6 ���������', 2, 1, '2009-04-23 03:10:10', 0, NULL, '/1', b'0');
@@ -598,7 +598,7 @@ CREATE TABLE `constants` (
   `Value` varchar(1000) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `Name` (`Name`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 INSERT INTO constants VALUES (5, 'RatingTime', '10.00.0000 00:00:00');
 INSERT INTO constants VALUES (6, 'MinRatingPercent', '1');
@@ -615,7 +615,7 @@ CREATE TABLE `delegationsToClassify` (
   `Author` int(11) default NULL,
   `addDate` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 INSERT INTO delegationsToClassify VALUES (5, b'0', 2, 5, 2, '2009-04-23 05:02:58');
 INSERT INTO delegationsToClassify VALUES (6, b'0', 2, 2, 3, NULL);
@@ -635,7 +635,7 @@ CREATE TABLE `initiativesratinglist` (
   `level` int(11) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `MI` (`Member`,`Initiative`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
 INSERT INTO initiativesratinglist VALUES (48, 3, 6, b'1', '2009-05-03 19:04:46', 3, NULL, b'0', 3, 1);
 INSERT INTO initiativesratinglist VALUES (62, 2, 5, b'0', '2009-05-07 01:04:13', 2, NULL, b'0', 2, 1);
@@ -664,7 +664,7 @@ CREATE TABLE `votes` (
   `Passive` tinyint(1) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `MI` (`Initiative`,`Member`)
-) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 INSERT INTO votes VALUES (1, 1, 2, NULL, NULL, NULL, b'0', b'0', NULL, NULL, b'1');
 INSERT INTO votes VALUES (4, 1, 3, NULL, NULL, NULL, b'1', b'0', NULL, NULL, b'0');
